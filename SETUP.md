@@ -24,7 +24,7 @@ python --version
 
 ### Bun (for job search tools)
 
-The Danish job portal CLIs are written in TypeScript and run with Bun:
+The job portal CLIs (Danish and Indian) are written in TypeScript and run with Bun:
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
@@ -52,7 +52,7 @@ Or manually: fork on GitHub, then clone your fork.
 ## 3. Install job search CLI dependencies
 
 ```bash
-for tool in jobbank-search jobdanmark-search jobindex-search jobnet-search; do
+for tool in naukri-search jobbank-search jobdanmark-search jobindex-search jobnet-search; do
   cd .agents/skills/$tool/cli && bun install && cd ../../../..
 done
 ```

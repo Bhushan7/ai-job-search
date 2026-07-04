@@ -12,7 +12,7 @@ instructions on the expected format and how to convert from Excel.
 
 Usage:
     python salary_lookup.py "Company Name"
-    python salary_lookup.py "Company Name" --city "København"
+    python salary_lookup.py "Company Name" --city "Bangalore"
     python salary_lookup.py "Company Name" --json
     python salary_lookup.py --list-all
 """
@@ -32,13 +32,19 @@ SPELLING_VARIANTS = {
     "ö": "o", "ä": "ae", "ü": "u",
 }
 
-# Legal suffixes and noise to strip when matching company names
+# Legal suffixes and noise to strip when matching company names.
+# Danish/Nordic suffixes are kept for compatibility with the upstream template;
+# Indian suffixes are added below for the Indian job market.
 STRIP_PATTERNS = [
     r"\ba/s\b", r"\baps\b", r"\bi/s\b", r"\bp/s\b", r"\bk/s\b",
     r"\bivs\b", r"\bamba\b", r"\ba\.m\.b\.a\.\b",
     r"\(vg\)", r"\(.*?\)",  # (VG) and other parentheticals
     r"\bdanmark\b", r"\bdenmark\b", r"\bscandinavia\b", r"\bnordic\b",
-    r"\bgroup\b", r"\bholding\b",
+    # Indian legal suffixes and common noise words
+    r"\bpvt\.?\s*ltd\.?\b", r"\bpvt\.?\b", r"\bltd\.?\b", r"\blimited\b",
+    r"\bllp\b", r"\binc\.?\b", r"\bcorp\.?\b", r"\bco\.?\b",
+    r"\b\(india\)\b", r"\bindia\b",
+    r"\bgroup\b", r"\bholding\b", r"\bholdings\b",
     r",\s*.*$",  # everything after comma (sub-entities)
 ]
 
@@ -261,7 +267,7 @@ def main():
         if args.city:
             print(f"  (filtered by city: {args.city})")
         print("\nTry a shorter or different name. Company names in the dataset")
-        print("may include legal suffixes like 'A/S' or 'ApS'.")
+        print("may include legal suffixes like 'Pvt Ltd', 'LLP', 'A/S', or 'ApS'.")
         sys.exit(1)
 
     if args.json:

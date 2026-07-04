@@ -1,14 +1,14 @@
 # Job Scraper
 
 **name:** job-scraper
-**description:** Scrapes Danish job sites for new positions matching your profile. Deduplicates across runs. Triggers on: job scrape, find jobs, search jobs, new jobs, job search, scrape jobs, /scrape
-**allowed-tools:** Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Agent, AskUserQuestion
+**description:** Scrapes job sites for new positions matching your profile (configured for the Indian job market by default — Naukri, LinkedIn, Instahyre, Cutshort, Wellfound). Deduplicates across runs. Triggers on: job scrape, find jobs, search jobs, new jobs, job search, scrape jobs, /scrape
+**allowed-tools:** Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Bash(bun run skills/naukri-search/cli/src/cli.ts *), Agent, AskUserQuestion
 
 ---
 
 ## How It Works
 
-This skill searches multiple Danish job sites using targeted queries based on your profile, deduplicates against previously seen jobs and the application tracker, and presents new matches with a quick fit assessment.
+This skill searches multiple job sites using targeted queries based on your profile, deduplicates against previously seen jobs and the application tracker, and presents new matches with a quick fit assessment. For Naukri.com, it prefers the `naukri-search` CLI skill (a direct API integration) over generic web search, since it returns cleaner, more complete results. For sites without a CLI integration (LinkedIn, Instahyre, Cutshort, Wellfound), it falls back to WebSearch/WebFetch, or you can paste a job posting directly into `/apply`.
 
 ## Invocation
 
@@ -39,7 +39,8 @@ Run **WebSearch** queries from `search-queries.md`. By default, run the top 3 pr
 If the user specified a focus area (e.g. "data science"), prioritize queries from that category.
 
 For each search:
-- Use `WebSearch` with site-specific queries (jobindex.dk, linkedin.com/jobs, karriere.dk, etc.)
+- If searching Naukri and the `naukri-search` CLI skill is installed, call it directly (`bun run skills/naukri-search/cli/src/cli.ts search --keyword ... --location ...`) instead of a `site:naukri.com` WebSearch — it's faster and more complete
+- Otherwise use `WebSearch` with site-specific queries (linkedin.com/jobs, instahyre.com, cutshort.io, wellfound.com, etc.)
 - Target your configured geographic area
 - Look for postings from the last 14 days
 

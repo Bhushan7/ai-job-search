@@ -65,5 +65,6 @@ job_search_tracker.csv
 # Upskill reports (personal output)
 upskill/*.md
 
-# Agent usage logs
-.agents/
+# Agent usage logs (not the .agents/skills/ CLI tools themselves — those are tracked)
+.agents/logs/
+.agents/*.log
