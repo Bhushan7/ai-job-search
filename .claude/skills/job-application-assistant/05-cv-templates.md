@@ -2,6 +2,38 @@
 
 <!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
 
+## India-Specific Conventions (Senior PM / Fintech-Payments)
+
+These apply on top of the universal rules below. They exist because Indian hiring practice
+and ATS behavior differ from the Danish/EU defaults this template originally assumed.
+
+- **No photo.** Unlike some European CV conventions, Indian tech/product hiring — including
+  fintech, payments, and iGaming — does not use a candidate photo. Do not add one even if
+  asked "should I look more personal"; a photo is more likely to trigger unconscious-bias
+  screening friction at larger companies (MNCs, GCCs) than to help.
+- **No personal details section.** Do not include date of birth, marital status, gender,
+  religion, or a passport-style personal-details block. This is common in some older Indian
+  resume templates (especially outside product/tech) but is now discouraged for tech and
+  product roles, and is actively flagged by modern ATS best practice.
+- **ATS-first formatting matters more here than in Denmark.** Naukri's own applicant tracking
+  system (Naukri RMS), plus Workday/Taleo/Greenhouse used by MNCs and GCCs, parse
+  single-column, standard-heading resumes far more reliably than dense two-column layouts.
+  The moderncv banking style below is already single-column and ATS-safe — do not switch to
+  a multi-column template for the Indian market.
+- **Compensation framing uses CTC, not gross salary.** If compensation appears anywhere
+  (cover letter negotiation notes, LinkedIn-style summary), use "CTC" (Cost to Company) and
+  ₹ LPA (lakhs per annum) notation, e.g. "₹65 LPA", not raw annual gross or monthly figures.
+  Never state a single number as a hard ask — frame as a range with your target at the lower
+  end, consistent with standard Indian negotiation practice.
+- **Notice period is a real, expected data point** for Senior PM hiring in India (commonly
+  30–90 days depending on employer and seniority) — unlike Denmark's `oprettet`/deadline-driven
+  process, Indian recruiters often ask for this explicitly in the first screening message, not
+  the CV itself. Do not put it on the CV, but be ready for `/apply` or interview-prep flows to
+  surface it as a talking point if the job evaluation surfaces it as a blocker.
+- **Company legal suffixes**: when referencing past employers, Indian entities typically use
+  "Pvt Ltd", "Ltd", or "LLP" rather than Danish "A/S"/"ApS" — match the suffix the employer
+  itself uses publicly (check their careers page or LinkedIn, don't guess).
+
 ## Template: LaTeX moderncv (Banking Style)
 
 All CVs use the moderncv LaTeX package with the "banking" style and "blue" color scheme.

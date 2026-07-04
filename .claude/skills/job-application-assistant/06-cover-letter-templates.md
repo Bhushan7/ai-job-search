@@ -1,5 +1,26 @@
 # Cover Letter Templates and Tailoring Guide
 
+## India-Specific Conventions (Senior PM / Fintech-Payments)
+
+- **Salutation defaults differ from Denmark.** Indian hiring emails frequently go through a
+  named recruiter or TA (talent acquisition) contact rather than a generic team inbox — check
+  the job posting or LinkedIn for a recruiter/hiring-manager name before falling back to
+  "Dear [Company] Hiring Team,". Avoid "Respected Sir/Madam," — it reads as dated/overly
+  formal for product/tech roles at the companies on this profile's target list (fintech,
+  payments, iGaming).
+- **Closing convention**: use "Best regards," or "Regards," rather than a Danish-style
+  "Med venlig hilsen" localization — for English-language Indian postings, standard
+  English closings apply regardless of the hiring company's country of origin.
+- **Notice period and CTC**: do not proactively mention current notice period or salary
+  expectations in the cover letter itself unless the job posting explicitly asks for it in
+  the application form. If it does, state notice period as a plain fact ("Currently serving
+  a 60-day notice period" or similar, matched to your actual employment status) and any
+  compensation figure in ₹ LPA / CTC terms, framed as a range with room to negotiate — never
+  as a single hard number.
+- **Company legal suffixes**: use "Pvt Ltd" / "Ltd" / "LLP" as appropriate when the company
+  name appears in body text, matching how the employer itself writes it (check their careers
+  page), rather than defaulting to Danish "A/S"/"ApS" patterns from the original template.
+
 ## Template: Custom cover.cls (XeLaTeX)
 
 Cover letters use a custom LaTeX document class (`cover.cls`) with Lato/Raleway fonts.
@@ -147,7 +168,7 @@ The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\l
 ### Non-English Cover Letters
 - Same template structure, just write content in the posting's language
 - Adjust date format to local convention
-- Adjust closing to local convention (e.g. "Med venlig hilsen," for Danish)
+- Adjust closing to local convention (e.g. "Med venlig hilsen," for Danish, "Best regards,"/"Regards," for English-language Indian postings)
 
 ## Checklist Before Finalizing
 - [ ] No em-dashes (use commas or periods instead)
